@@ -1,0 +1,36 @@
+/* LESS Document */
+
+@mainColor: #ff1493;
+@headingFont: 20px;
+@standardBorder: 1px solid @mainColor;
+@sectionPadding: 10px 5px;
+@linkColor: #9370db;
+@color: #ff1493;
+
+h1 {
+  color: darken(@color, 20%);
+}
+h2 {
+  color: darken(@color, 10%
+}
+h3 {
+  color: @color;
+}
+h4 {
+  color: lighten(@color, 10%);
+}
+
+
+.borderRadius(@radius: 5px){
+  -mox-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+header {
+  .borderRadius;
+  border: @standardBorder;
+  padding: @sectionPadding;
+  backround: #fff;
+  
+}	

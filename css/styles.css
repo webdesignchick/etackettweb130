@@ -1,0 +1,126 @@
+* {
+  margin:0;
+  padding:0;
+  
+}
+body{
+  font-size: 16pt;
+  font: sans-serif;
+}
+header {
+  text-align: center;
+  padding: 1%;
+  margin: 1%;
+}
+a {
+  text-decoration: none;
+  font-size: 16pt;
+  color: #00CCFF;
+}
+
+h3 {
+  font: sans-serif;
+  padding:1%;
+}
+article{
+  padding: 1%;
+  margin: 1%;
+  height: auto;
+   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  
+}
+
+aside {
+  padding: 1% 1% 1% 3%;
+  margin: 1%;
+  height: auto;
+   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  overflow:auto;
+}
+p {
+  padding: 1%;
+
+    
+}
+img {
+  max-width: 98%;
+  margin: 1% ;
+}
+
+/*ul {
+  list-style: none;
+  }
+*/
+li{
+  padding-bottom: 2%;
+  
+}
+
+
+footer {
+  clear:both;
+  text-align: center;
+  padding: 1%;
+  margin: 1%;
+  
+  
+}
+
+@media only screen and (min-width: 1025px) {
+
+article {
+  width: 60%;
+  float: left;
+  background-color: #00CCFF;/*blue*/
+ }
+aside{
+  width: 35%;
+  float: right;
+  background-color: #FFFF33;/*yellow*/
+ 
+}
+  }
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px){
+ article {
+   float: left;
+   width: 70%;
+   background-color: #FF6600;/*orange*/
+  }
+  aside {
+   float: right;
+   width: 25%;
+   background-color: #3366FF;/*blue*/
+    
+  }
+
+}
+
+@media only screen 
+and (max-width: 767px){
+ article {
+   float: none;
+   width: 98%;
+   background-color: #9933FF;/*purlpe*/
+  }
+  aside {
+   float: none;
+   width: 98%;
+   background-color: #CC3333;/*red*/
+  font-size: .8em;  
+  }
+  footer {
+    font-size: .8em;  
+  }
+  
+  
+  
+  
+}
+  

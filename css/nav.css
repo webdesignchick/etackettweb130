@@ -1,0 +1,45 @@
+.mainmenu {
+  background: #778899;
+  padding-bottom:5%;
+}
+.mainmenu ul {
+  
+  list-style-type: none;
+  padding-left: 1%;
+  position: relative;
+}
+.mainmenu li {
+ float: left;
+}
+.mainmenu li a {
+  background: #778899;
+  text-decoration: none;
+  padding: 5% 10%;
+  display: block;
+}
+.mainmenu ul li a:hover {
+  background: #99ccff;
+  color: #003300;
+}
+/*submenu*/
+ul li ul {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear; 
+    
+}
+ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+ ul li ul li {
+  float: none;
+  background: #778899;
+ 
+}
+ ul li ul li:hover {
+  background: #99ccff;
+}
