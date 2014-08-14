@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Form One</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" >
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- <script src="js/jquery-2.1.1.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  </head>
+<body>
+    <form id="contact-form" action="success.html">
+      <p>
+        <label for="first-name">First Name:</label>
+        <input name= "first-name" id="first-name" type="text">
+        <span id="error-first-name" class="error hidden">* Error</span>
+      </p>
+      <button name="submit" type="submit">Submit</button>
+  </form>
+  <script type="text/javascript">
+  
+       window.onload=function(){
+      // alert("hello world");
+         document.getElementById("contact-form").onsubmit = validateContact;
+       }
+       
+       
+       function validateContact(){
+   // alert("hello world");
+         var firstName = document.getElementById("first-name").value;
+         var fNameError = document.getElementById("error-first-name");
+
+         if (firstName == ""){
+           fNameError.className = "error";
+           return false;
+           }
+         else {
+           fNameError.className  ="hidden";
+           return true;           
+         }
+       }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

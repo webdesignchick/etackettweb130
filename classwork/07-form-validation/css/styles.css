@@ -1,0 +1,29 @@
+.error {
+  color: red;
+}
+.hidden {
+  display: none;
+}
+.match {
+  color: blue;
+}
+label {
+   display: block;
+  text-align: right;
+}
+input {
+  margin-left:1.5%
+}
+select {
+  margin-left:2.5%;
+    width: 136px;
+}
+button {
+  float: right;
+  margin: 1%;
+}
+
+section {
+  max-width: 500px;
+  padding: 5% 10%;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact Form</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" >
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+     <script src="js/jquery-2.1.1.min.js"></script> 
+     <script src=js/contact.js></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  </head>
+<body>
+  <section>
+    <form id="contact-form" action="contact.html">
+      <label for="first-name">First Name:
+        <input name= "first-name" id="first-name" type="text">
+        </label>
+        <span id="error-first-name" class="error "></span>
+      <label for="last-name">Last Name:
+        <input name="last-name" id="last-name" type="text">
+        </label>
+        <span id="error-last-name" class="error "> </span>
+      <label for="address">Address:
+        <input name="address" id="address" type="text">
+        </label>
+        <span id="error-address" class="error"> </span>
+      
+      <label for="city">City:
+       <select id="city">
+        <option value="noAnswer"></option>
+        <option value="seattle">Seattle</option>
+        <option value="tukwila">Tukwila</option>
+        <option value="renton">Renton</option>
+        <option value="woodinville">Woodingville</option>
+        <option value="lynnwood">Lynnwood</option>
+        <option value="millckreek">Mill Creek</option>
+        <option value="bremerton">Bremerton</option>
+        <option value="bainbridge">Bainbridge Island</option>
+        <option value="Tacoma">Tacoma</option>
+        <option value="federalway">Federal Way</option>
+        <option value="seatac">Seatac</option>
+        <option value="bellevue">Bellevue</option>
+        <option value="kirkland">Kirkland</option>
+        <option value="redmond">Redmond</option>
+        <option value="issaquah">Issaquah</option>
+        
+        <option value="other">Other</option>  <!-- if other returns true then provide input box for this field -->
+      </select>
+        </label>
+      <span id="error-city" class="error"> </span>
+      
+      <label for="zip">Zip Code:
+        <input name="zip" id="zip" type="text">
+        </label>
+        <span id="error-zip" class="error"> </span>
+     
+      <label for="email">Email:
+        <input name="email" id="email" type="email">
+        </label>
+        <span id="error-email" class="error"> </span>
+     
+      <label for="email-confirm">Confirm Email:
+        <input name="confirm-email" id="confirm-email" type="text">
+        </label>
+        <span id="match-email" class="match"></span> 
+        <span id="error-confirm-email" class="error"> </span>
+      
+      <label for="language">Please check each language you speak:  </label>
+        <input type="checkbox" value="english" id="language">English
+        <input type="checkbox" value="spanish" id="language">Espanol
+        <input type="checkbox" value="french" id="language">Francais
+        <input type="checkbox" value="german" id="language">Deutsche
+        <input type="checkbox" value="italian" id="language">Italiano
+        <input type="checkbox" value="gaelic" id="language">Gaeilge
+        
+        <input type="checkbox" value="langauge-other" id="language">Other
+      
+        <span id="error-language" class="error"></span>
+   <label for="own-car">Do you own a car?
+        <input type="radio" name="car" value="yes">Yes
+        <input type="radio" name="car" value="no">No
+        <span id="error-car" class="error"></span>
+        </label>
+        <button name="clear" type="reset">Clear</button>
+  </form>
+        <button id="submit" name="submit" >Submit</button>
+		<span id="error-form" class="error"></span>
+
+  </section>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

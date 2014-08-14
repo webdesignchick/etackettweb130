@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Form Three</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" >
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+   <script src="js/jquery-2.1.1.min.js"></script> 
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  </head>
+<body>
+    <form id="contact-form" action="success.html">
+      <p>
+        <label for="first-name">First Name:</label>
+        <input name= "first-name" id="first-name" type="text">
+        <span id="error-first-name" class="error hidden">* Error</span>
+      </p>
+
+      <p>
+        <label for="last-name">Last Name:</label>
+        <input name= "last-name" id="last-name" type="text">
+        <span id="error-last-name" class="error hidden">* Error</span>
+      </p>
+    
+      <p>
+        <label for="phone-no">Phone No.:</label>
+        <input type='text' name='text1'/>
+        <span class="error hidden">* Error</span>
+      </p>
+      <p>
+        <input type="checkbox" id="terms" name="terms">  I agree
+        <span class="error hidden" >* Please Agree to the Terms</span>
+      </p>
+      <button name="submit" type="submit">Submit</button>
+  
+  </form>
+  <script type="text/javascript">
+      window.onload = function() {
+      document.getElementById("contact-form").onsubmit = validateForm;
+    }
+    
+    function validateForm() {
+      var validFirstName = validateTextField("first-name", "error-first-name");
+      var validLastName = validateTextField("last-name", "error-last-name");
+      var validPhone = validatePhone("phone", "error-phone");
+      var validTerms = validateCheckBox("terms", "error-terms");
+      
+      return validFirstName && validLastName && validPhone && validTerms;
+      
+    }
+    
+    function validateTextField(fieldId, errorId){
+     
+      var fieldText = document.getElementById(fieldId).value;
+      var errorSpan = document.getElementById(errorId);
+      
+      if(fieldText === "") {
+
+        errorSpan.className = "error";
+        return false;
+      } else {
+        
+        errorSpan.className = "hidden";
+        return true;
+      }
+    }
+    
+    function validateCheckBox(fieldId, errorId){
+      
+      var checkBox = document.getElementById(fieldId);
+      var errorSpan = document.getElementById(errorId);
+      
+      if(!checkBox.checked) {
+        
+        errorSpan.className = "error";
+        return false;
+      } else {
+       
+        errorSpan.className = "hidden";
+        return true;
+      }
+    }
+  
+  
+    function validatePhone(inputtxt) {  
+     
+      var phoneno = /^\d{10}$/;  
+        if(inputtxt.value.match(phoneno)) {  
+            return true;  
+        }  
+        else  {  
+           alert("Not a valid Phone Number");  
+           return false;  
+        }  
+         }
+      
+    document.getElementById("myCheck").required = true;
+  
+ }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
