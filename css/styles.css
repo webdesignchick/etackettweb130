@@ -79,6 +79,7 @@ footer {
   color: blue;
 }
 label {
+	padding-top:5px;
   display:block;
  font-weight: bold;
 }
