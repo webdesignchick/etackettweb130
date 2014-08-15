@@ -15,7 +15,7 @@ var ValCheck = {
 
 
 $('#first-name').focusout(function(){
-	RequiredField('first-name', ValCheck.firstName);
+	return RequiredField('first-name', ValCheck.firstName);
 });
 
 $('#last-name').focusout(function(){
