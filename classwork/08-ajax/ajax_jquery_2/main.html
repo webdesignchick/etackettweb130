@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+
+
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+		<script>
+      $(document).ready(function(){
+         //$("#button1").click(showMessage(){
+        $("numBox").keyup(showMessage);
+        // alert("hello");working
+      }); 
+        function showMessage(){
+           
+           var numBox =$("#numBox").val();
+          //2 return alert(numBox);
+          //1 return alert("hello"); not working
+          $("showMe").load("poster.php", {
+            data: (this).val
+          });
+         };
+       
+       
+        
+      
+     
+        
+    
+ 
+
+		</script>
+
+	</head>
+
+	<body>
+    <h1>Please tell me a number</h1>
+    <input id="numBox" type="text">
+    <div id="showMe"></div>
+    <button id="button1"> Hit Me</button>
+
+  
+  
+  
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

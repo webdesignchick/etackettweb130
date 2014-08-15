@@ -1,0 +1,46 @@
+<html>
+
+	<head>
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+		<script>
+    $(document).ready(function(){
+      $("#doStuff").click(showMessage);
+      $("#doStuff2").click(showMessage2);
+      $("#doStuff3").click(showMessage3);
+    });
+      function showMessage(){
+       // alert("yep yep");
+      $("#target").load("message.txt",                                      );
+      }
+			 function showMessage2(){
+      
+      $("#target2").load("message.html #div1")
+      }
+      function showMessage3(){
+      
+      $("#target3").load("example.com/index.html")
+      }
+      
+      
+
+		</script>
+
+    </head>
+
+	<body>
+    <div id="target">  </div>
+    
+    <button id="doStuff">Do Stuff</button>
+
+    <div id="target2">  </div>
+    
+    <button id="doStuff2">Do Stuff</button>
+
+     <div id="target3">  </div>
+    
+    <button id="doStuff3">Do Stuff</button>
+	</body>
+
+</html>
