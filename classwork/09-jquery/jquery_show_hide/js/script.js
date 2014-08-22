@@ -4,19 +4,21 @@ $(document).ready(function(){
 	$("#hide-btn").click(hideFlowers);
 });
 
-function doStuff()
-{
+function doStuff(){
+   $("#place-text").html("hello");
     //put "hello in #place-text"
 }
 
 function showFlowers()
 {
+   $("#flowers").show(1000);
     //show #flowers
 }
 
 function hideFlowers()
 {
-    //hide #flowers
+   $("#flowers").hide(1000);
+  //hide #flowers
 }
 
 

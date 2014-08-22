@@ -1,43 +1,56 @@
 $(document).ready(function() {
 
-var ValCheck = {
-	firstName: false,
-	lastName: false,
-	address: false,
-	city: false,
-	zip: false,
-	email: false,
-	confirmEmail: false,
-	language: false,
-	car: false
-}
-
+var ValCheck = new Array("false", "false", "false", "false", "false", "false", "false", "false", "false");
 
 
 $('#first-name').focusout(function(){
-	return RequiredField('first-name', ValCheck.firstName);
+		var fieldText = $('#first-name').val();
+
+     if(fieldText === "") {
+       $("#error-first-name").text("Required");        
+		
+      } 
+      else {
+		 ValCheck[0] = true;
+	  }
 });
 
 $('#last-name').focusout(function(){
-	RequiredField('last-name', ValCheck.lastName);
+		var fieldText = $('#last-name').val();
+
+     if(fieldText === "") {
+       $("#error-last-name").text("Required");        
+		
+      } 
+      else {
+		ValCheck[1] = true;
+	  }
 });
 
 $('#address').focusout(function(){
-	RequiredField('address', ValCheck.address);
+			var fieldText = $('#address').val();
+
+     if(fieldText === "") {
+       $("#error-address").text("Required");        
+		
+      } 
+      else {
+		ValCheck[2] = true;
+	  }
 });
 
 $('#city').focusout(function(){
 	var fieldText = $('#city').val();
 	
 	if(fieldText === "noAnswer"){
-		$("span#error-city").text("Required");
+		$("#error-city").text("Required");
 	}
 	if(fieldText === "other"){
 		var data = prompt("Please enter your city");
-		ValCheck.city = true;
+		ValCheck[3] = true;
 	}
 	 else {
-		ValCheck.city = true;
+		ValCheck[3] = true;
 	}	
 });
 
@@ -47,11 +60,11 @@ $('#zip').focusout(function() {
 	
 	var condition = patt.test(fieldText);
 	
-	if(condition == true){
-		ValCheck.zip = true;
+	if(condition === true){
+		ValCheck[4] = true;
 		}
 	else {
-		$("span#error-zip").text("4-5 Numeric Digits Required");
+		$("#error-zip").text("4-5 Numeric Digits Required");
 	}
 	
 });
@@ -65,11 +78,11 @@ $('#email').focusout(function() {
 	var condition = patt.test(fieldText);
 	
 	if(condition == false){
-		$("span#error-email").text("Required");
+		$("#error-email").text("Required");
 		
 		}
 	else {
-       	ValCheck.email = true;
+       	ValCheck[5] = true;
 	}
 });
 
@@ -77,11 +90,11 @@ $('#confirm-email').focusout(function() {
     var fieldText = $('#confirm-email').val();
 	
 	if(fieldText === firstEmail){
-		$("span#match-email").text("Email's Match");
-		ValCheck.email = true;
+		$("#match-email").text("Email's Match");
+		ValCheck[6] = true;
 	}
 	else {
-		$("span#error-confirm-email").text("Email's Must Match");
+		$("#error-confirm-email").text("Email's Must Match");
 	}
 
 
@@ -96,63 +109,52 @@ $('#submit').click(function(){
 	var numOfChecked = $('input[type="checkbox"]:checked').length
 	var radioSelected = $('input[type="radio"]:checked').length
 	
-	if(radioSelected == 0)
+	if(radioSelected === 0)
 	{
-		$("span#error-car").text('Please answer the question.');
+		$("#error-car").text('Please answer the question.');
 	} else {
-	  ValCheck.car = true;	
+	  ValCheck[7] = true;	
 	}
 	
 	if(numOfChecked == 0){
-		$("span#error-language").text("Please check at least one field.");
+		$("#error-language").text("Please check at least one field.");
 	} else {
-		ValCheck.language = true;
+		ValCheck[8] = true;
 	}
 	
-	
-	if(
-	   ValCheck.address &&
-	   ValCheck.car &&
-	   ValCheck.city &&
-	   ValCheck.confirmEmail &&
-	   ValCheck.email &&
-	   ValCheck.firstName && 
-	   ValCheck.lastName &&
-	   ValCheck.language && 
-	   ValCheck.zip)
-	   {
-		 $('form').submit();
-		 url:"success.html";
+  
+  for (i = 0; i < ValCheck.length; i++)
+    {
+        var con = ValCheck[i];
+      	if(con === "false")
+	      {
+          $('#error-form').text('Your form is incomplete please check for errors.');
+		      throw 500;
 		   
-	   }
-	   else
-	   {
-		   		$('span#error-form').text('Your form is incomplete please check for errors.');
+	      } 
+    }
+  
+   $('form').submit();
 
-		   
-	   }
-	   
-	
-	
 })
 
 
 
-var RequiredField = function(field, valCheck){
-	var self = this;
+// var RequiredField = function(field, valCheck){
+// 	var self = this;
 	
-	var fieldText = $('#' + field).val();
+// 	var fieldText = $('#' + field).val();
 
-     if(fieldText === "") {
-       $("span#error-" + "!").text("Required");        
+//      if(fieldText === "") {
+//        $("#error-" + field).text("Required");        
 		
-      } 
-      else {
-		valCheck = true;
-	  }
+//       } 
+//       else {
+// 		valCheck = true;
+// 	  }
 	
 	
-};
+// };
 
 
 
